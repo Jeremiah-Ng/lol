@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>e</title>
+</head>
+
+<body>
+    <div id="e1">
+        1.<input id="1p1" type="text">
+        <br>
+        <br>
+        2.<input id="1p2" type="text">
+        <br>
+        <br>
+        3.<input id="1p3" type="text">
+        <br>
+        <br>
+        4.<input id="1p4" type="text">
+        <br>
+        <br>
+        5.<input id="1p5" type="text">
+        <br>
+        <br>
+        6.<input id="1p6" type="text">
+        <br>
+        <br>
+        <input onclick="combine1()" type="button" value="Paragraph 1">
+    </div>
+    <div id="e">
+        1.<input id="2p1" type="text">
+        <br>
+        <br>
+        2.<input id="2p2" type="text">
+        <br>
+        <br>
+        3.<input id="2p3" type="text">
+        <br>
+        <br>
+        4.<input id="2p4" type="text">
+        <br>
+        <br>
+        5.<input id="2p5" type="text">
+        <br>
+        <br>
+        6.<input id="2p6" type="text">
+        <br>
+        <br>
+        <input onclick="combine2()" type="button" value="Paragraph 2">
+    </div>
+    <p id="paragraph1"></p>
+    <p id="paragraph2"></p>
+    <script>
+        var array1 = [];
+        var array2 = [];
+
+        function combine1() {
+            array1 = [];
+            for (var i = 1; i < 7; i++) {
+                var names = document.getElementById("1p" + i).value;
+                if (names != "") {
+                    array1.push(names);
+                }
+            }
+            console.log(array1);
+            var display = [];
+            var array_length = array1.length;
+            for (var k = 0; k < array_length; k++) {
+                display.push(array1[k]);
+            }
+            var remove = display.join(" ")
+            document.getElementById("paragraph1").innerHTML = remove;
+        }
+function combine2() {
+            array2 = [];
+            for (var i = 1; i < 7; i++) {
+                var names = document.getElementById("2p" + i).value;
+                if (names != "") {
+                    array2.push(names);
+                }
+            }
+            console.log(array1);
+            var display = [];
+            var array_length = array2.length;
+            for (var k = 0; k < array_length; k++) {
+                display.push(array2[k]);
+            }
+            var remove = display.join(" ")
+            document.getElementById("paragraph2").innerHTML = remove;
+        }
+    </script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #e {
+            float: right;
+            display: inline;
+            margin-right: 100px;
+            margin-top: 100px
+        }
+
+        #e1 {
+            float: left;
+            display: inline;
+            margin-left: 100px;
+            margin-top: 100px
+        }
+
+
+    </style>
+</body>
+
+</html>
